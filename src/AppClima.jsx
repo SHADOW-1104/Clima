@@ -48,7 +48,7 @@ export const AppClima = () => {
             <h1>AppClima</h1>
 
             <form onSubmit={handleSubmit}>
-                <input id="inp" type="text" onChange={handleCiudad} />
+                <input id="inp" type="text" onChange={handleCiudad} autoComplete="off" />
                 <button type="submit">Buscar</button>
                 <p>-</p>
                 <button type="button" onClick={clear}>Reset</button>
