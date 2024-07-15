@@ -14,16 +14,20 @@ export const AppClima = () => {
 
     }
 
-    const clear = () => {
+    const clearInput = () => {
         inp.value = ''
+    }
+    
+    const clear = () => {
         setDataClima(null)
+        
     }
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (ciudad.length > 0) fetchClima()
-        clear()
+        clearInput()
     }
 
     const fetchClima = async () => {
