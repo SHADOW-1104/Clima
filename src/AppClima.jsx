@@ -45,12 +45,11 @@ export const AppClima = () => {
 
     return (
         <div className="container">
-            <h1>AppClima</h1>
+            <h1>App Clima</h1>
 
             <form onSubmit={handleSubmit}>
                 <input id="inp" type="text" onChange={handleCiudad} autoComplete="off" />
                 <button type="submit">Buscar</button>
-                <p>-</p>
                 <button type="button" onClick={clear}>Reset</button>
             </form>
 
