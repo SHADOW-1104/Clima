@@ -11,12 +11,10 @@ export const AppClima = () => {
 
     const handleCiudad = (e) => {
         setCiudad(e.target.value)
-
     }
-    
+
     const clear = () => {
         setDataClima(null)
-        
     }
 
     const handleSubmit = (e) => {
