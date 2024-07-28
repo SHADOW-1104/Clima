@@ -6,16 +6,12 @@ export const AppClima = () => {
     const API_KEY = '562f135e97add3e9a3ac9b88f53bd7d6'
     const kelvin = 273.15
     const inp = document.getElementById('inp')
-    const [ciudad, setCiudad] = useState('')
+    const [ciudad, setCiudad] = useState(null)
     const [dataClima, setDataClima] = useState(null)
 
     const handleCiudad = (e) => {
         setCiudad(e.target.value)
 
-    }
-
-    const clearInput = () => {
-        inp.value = ''
     }
     
     const clear = () => {
@@ -23,18 +19,18 @@ export const AppClima = () => {
         
     }
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (ciudad.length > 0) fetchClima()
-        clearInput()
+        ciudad ? fetchClima() : alert('Campo vacio')
+        setCiudad(null)
+        inp.value = ''
     }
 
     const fetchClima = async () => {
         try {
             const response = await fetch(`${urlBase}?q=${ciudad}&appid=${API_KEY}`)
             if (!response.ok) {
-                throw new error('Algo salio mal')
+                throw new Error('Algo salio mal')
             }
             const data = await response.json()
             setDataClima(data)
